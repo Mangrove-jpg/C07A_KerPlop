@@ -17,7 +17,7 @@ public class Dragon extends GamePiece implements Moveable{
 	}
 
 	public InteractionResult interact(Drawable[] gameboard, int playerLocation) {
-		return InteractionResult.NONE;
+		return InteractionResult.HIT;
 	}
 	
 	public void move (Drawable[] gameBoard, int playerLocation) {
