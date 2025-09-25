@@ -55,7 +55,7 @@ public class LevelSetup {
 		Dragon dragon = new Dragon('D', "Dragon", 8);
 		Lava lava = new Lava ('L', "Lava", 9);
 		
-		gameboard = new Drawable[10];
+		gameboard = new Drawable[21];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
 		
