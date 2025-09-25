@@ -28,16 +28,16 @@ public class Dragon extends GamePiece implements Moveable{
 		int current_loc = getLocation();
 		numGen = new Random();
 		int randomNumber = numGen.nextInt(gameBoard.length - 1);
+		
+		// While loop for if the randomNumber is already a location with a game piece
+		while (gameBoard[randomNumber] != null) {
+			randomNumber = numGen.nextInt(gameBoard.length - 1);
+		}
 		this.setLocation(randomNumber);
+		gameBoard[getLocation()] = this;
 
-			
 	
 	//Delete The dragon From Gameboard
-		//Where Dragon is going getLocation()
-		if (gameBoard[getLocation()] == null) {
-			gameBoard[getLocation()] = this;
-		}
-		
 		// Where dragon came from
 		if (gameBoard[current_loc] == this) {
 			gameBoard[current_loc] = null;
