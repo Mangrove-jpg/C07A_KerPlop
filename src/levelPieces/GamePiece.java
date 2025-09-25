@@ -61,7 +61,7 @@ public abstract class GamePiece implements Drawable {
 	public int getLocation() {
 		return location;
 	}
-	
+
 	/**
 	 * @param newLocation - location to place piece
 	 */

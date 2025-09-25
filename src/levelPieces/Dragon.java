@@ -7,18 +7,16 @@ import gameEngine.Moveable;
 import java.util.Random;
 
 public class Dragon extends GamePiece implements Moveable{
-	boolean dirRight = true;
 	
 	private Random numGen;
 	
 	public Dragon(char symbol, String label, int location) {
 		super(symbol, label, location);
-		boolean dirRight = true;
 	}
 
 	
 	public InteractionResult interact(Drawable[] gameboard, int playerLocation) {
-		if (getLocation() == playerLocation - 1) {
+		if (getLocation() == playerLocation) {
 			return InteractionResult.HIT;
 		}
 		else {
@@ -35,10 +33,12 @@ public class Dragon extends GamePiece implements Moveable{
 			
 	
 	//Delete The dragon From Gameboard
+		//Where Dragon is going getLocation()
 		if (gameBoard[getLocation()] == null) {
 			gameBoard[getLocation()] = this;
 		}
 		
+		// Where dragon came from
 		if (gameBoard[current_loc] == this) {
 			gameBoard[current_loc] = null;
 		}

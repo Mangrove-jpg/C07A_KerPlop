@@ -5,11 +5,11 @@ import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
 public class Bird extends GamePiece implements Moveable{
-	boolean dirRight = true;
+	boolean dirRight;
 	
 	public Bird(char symbol, String label, int location) {
 		super(symbol, label, location);
-		boolean dirRight = true;
+		dirRight = true;
 	}
 
 	public InteractionResult interact(Drawable[] gameboard, int playerLocation) {
@@ -17,29 +17,34 @@ public class Bird extends GamePiece implements Moveable{
 	}
 	
 	public void move (Drawable[] gameBoard, int playerLocation) {
+		int prev_location = getLocation();
 		int current_loc = getLocation();
 		
-		if (current_loc == gameBoard.length - 1) {
-			dirRight = false;
+		// Loop to find next Location
+		while (gameBoard[current_loc] != null) {
+			if (current_loc == gameBoard.length - 1) {
+				dirRight = false;
+			}
+			if (current_loc == 0) {
+				dirRight = true;
+			}
+			
+			if (dirRight) {
+				current_loc ++;
+			}
+			else {
+				current_loc --;
+			}
 		}
-		if (current_loc == 0) {
-			dirRight = true;
-		}
-		
-		if (dirRight) {
-			this.setLocation(current_loc + 1);
-		}
-		else {
-			this.setLocation(current_loc - 1);
-		}
+		setLocation(current_loc);
 	
 	//Delete The bird From Gameboard
-		if (gameBoard[getLocation()] == null) {
-			gameBoard[getLocation()] = this;
-		}
+		// Add 1 to the current_loc until There is a null
 		
-		if (gameBoard[current_loc] == this) {
-			gameBoard[current_loc] = null;
+		gameBoard[getLocation()] = this;
+		
+		if (gameBoard[prev_location] == this) {
+			gameBoard[prev_location] = null;
 		}
 		
 		

@@ -51,6 +51,7 @@ public class LevelSetup {
 		playerStartLocation = 3;
 		Tree firstTree = new Tree('T', "Tree", 0);
 		Tree secondTree = new Tree('T', "Tree", 5);
+		Tree thirdTree = new Tree('T', "Tree", 11);
 		Bird bird = new Bird('B', "Bird", 6);
 		Dragon dragon = new Dragon('D', "Dragon", 8);
 		Lava lava = new Lava ('L', "Lava", 9);
@@ -63,6 +64,7 @@ public class LevelSetup {
 		//Set All Drawables
 		gameboard[firstTree.getLocation()] = firstTree;
 		gameboard[secondTree.getLocation()] = secondTree;
+		gameboard[thirdTree.getLocation()] = thirdTree;
 		gameboard[bird.getLocation()] = bird;
 		gameboard[dragon.getLocation()] = dragon;
 		gameboard[lava.getLocation()] = lava;
