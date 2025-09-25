@@ -16,8 +16,14 @@ public class Dragon extends GamePiece implements Moveable{
 		boolean dirRight = true;
 	}
 
+	
 	public InteractionResult interact(Drawable[] gameboard, int playerLocation) {
-		return InteractionResult.HIT;
+		if (getLocation() == playerLocation - 1) {
+			return InteractionResult.HIT;
+		}
+		else {
+			return InteractionResult.NONE;
+		}
 	}
 	
 	public void move (Drawable[] gameBoard, int playerLocation) {
