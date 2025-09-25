@@ -51,12 +51,22 @@ public class LevelSetup {
 		playerStartLocation = 3;
 		Tree firstTree = new Tree('T', "Tree", 0);
 		Tree secondTree = new Tree('T', "Tree", 5);
+		Bird bird = new Bird('B', "Bird", 6);
+		
 		gameboard = new Drawable[10];
 		movingPieces = new ArrayList<Moveable>();
 		interactingPieces = new ArrayList<GamePiece>();
 		
-		gameboard[0] = firstTree;
-		gameboard[5] = secondTree;
+		
+		//Set All Drawables
+		gameboard[firstTree.getLocation()] = firstTree;
+		gameboard[secondTree.getLocation()] = secondTree;
+		gameboard[bird.getLocation()] = bird;
+		
+		//Set all Moveables
+		movingPieces.add(bird);
+		
+		//Set all interactables
 	}
 			
 	//Set up data structures for level 2
