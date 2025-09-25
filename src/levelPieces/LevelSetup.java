@@ -3,12 +3,10 @@ package levelPieces;
 import java.util.ArrayList;
 import gameEngine.Drawable;
 import gameEngine.Moveable;
-import gameEngine.InteractionResult;
 import gameEngine.Player;
 
 public class LevelSetup {
 	
-	private int levelNumber;
 	private int playerStartLocation;
 	
 	private Drawable[] gameboard;
