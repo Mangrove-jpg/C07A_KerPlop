@@ -52,6 +52,7 @@ public class LevelSetup {
 		Tree firstTree = new Tree('T', "Tree", 0);
 		Tree secondTree = new Tree('T', "Tree", 5);
 		Bird bird = new Bird('B', "Bird", 6);
+		Dragon dragon = new Dragon('D', "Dragon", 8);
 		
 		gameboard = new Drawable[10];
 		movingPieces = new ArrayList<Moveable>();
@@ -62,9 +63,11 @@ public class LevelSetup {
 		gameboard[firstTree.getLocation()] = firstTree;
 		gameboard[secondTree.getLocation()] = secondTree;
 		gameboard[bird.getLocation()] = bird;
+		gameboard[dragon.getLocation()] = dragon;
 		
 		//Set all Moveables
 		movingPieces.add(bird);
+		movingPieces.add(dragon);
 		
 		//Set all interactables
 	}
