@@ -55,6 +55,7 @@ public class LevelSetup {
 		Bird bird = new Bird('B', "Bird", 6);
 		Dragon dragon = new Dragon('D', "Dragon", 8);
 		Lava lava = new Lava ('L', "Lava", 9);
+		Portal portal = new Portal('O', "Portal", 15);
 		
 		gameboard = new Drawable[21];
 		movingPieces = new ArrayList<Moveable>();
@@ -68,6 +69,7 @@ public class LevelSetup {
 		gameboard[bird.getLocation()] = bird;
 		gameboard[dragon.getLocation()] = dragon;
 		gameboard[lava.getLocation()] = lava;
+		gameboard[portal.getLocation()] = portal;
 		
 		//Set all Moveables
 		movingPieces.add(bird);
@@ -76,10 +78,28 @@ public class LevelSetup {
 		//Set all interactables
 		interactingPieces.add(dragon);
 		interactingPieces.add(lava);
+		interactingPieces.add(portal);
 	}
 			
 	//Set up data structures for level 2
 	public void level2() {
+		playerStartLocation = 12;
+		
+		gameboard = new Drawable[21];
+		movingPieces = new ArrayList<Moveable>();
+		interactingPieces = new ArrayList<GamePiece>();
+		
+		
+		Tree tree = new Tree('T', "Tree", 2);
+		
+		// Set Drawables
+		gameboard[tree.getLocation()] = tree;
+		
+		// Set Moveables
+		
+		// Set interactables
+		
+		
 				
 	}
 	
