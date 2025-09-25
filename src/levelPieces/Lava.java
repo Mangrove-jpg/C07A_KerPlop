@@ -10,7 +10,8 @@ public class Lava extends GamePiece {
 	}
 
 	public InteractionResult interact(Drawable[] gameboard, int playerLocation) {
-		if (getLocation() == playerLocation - 1) {
+		
+		if (getLocation() == playerLocation) {
 			return InteractionResult.KILL;
 		}
 		else {

@@ -73,7 +73,7 @@ public class LevelSetup {
 		
 		//Set all interactables
 		interactingPieces.add(dragon);
-		//interactingPieces.add(lava);
+		interactingPieces.add(lava);
 	}
 			
 	//Set up data structures for level 2
