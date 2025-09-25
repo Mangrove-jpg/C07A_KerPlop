@@ -3,7 +3,6 @@ package levelPieces;
 import java.util.ArrayList;
 import gameEngine.Drawable;
 import gameEngine.Moveable;
-import gameEngine.Player;
 
 public class LevelSetup {
 	
@@ -24,10 +23,10 @@ public class LevelSetup {
 	
 	//Set Level Number
 	public void createLevel(int levelNum){
-		if (levelNum == 0) {
+		if (levelNum == 1) {
 			level1();
 		}
-		else if (levelNum == 1) {
+		else if (levelNum == 2) {
 			level2();
 		}
 	}
@@ -52,12 +51,12 @@ public class LevelSetup {
 		playerStartLocation = 3;
 		Tree firstTree = new Tree('T', "Tree", 0);
 		Tree secondTree = new Tree('T', "Tree", 5);
-		Player player = new Player(playerStartLocation);
-		Drawable[] temp = new Drawable[10];
+		gameboard = new Drawable[10];
+		movingPieces = new ArrayList<Moveable>();
+		interactingPieces = new ArrayList<GamePiece>();
 		
-		temp[0] = firstTree;
-		temp[playerStartLocation] = player;
-		temp[5] = secondTree;
+		gameboard[0] = firstTree;
+		gameboard[5] = secondTree;
 	}
 			
 	//Set up data structures for level 2
