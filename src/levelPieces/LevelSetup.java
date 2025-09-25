@@ -91,20 +91,27 @@ public class LevelSetup {
 		
 		
 		Tree tree = new Tree('T', "Tree", 2);
+		Tree treetree = new Tree('T', "Tree", 16);
+		Tree treetreetree = new Tree('T', "Tree", 10);
 		Prize prize1 = new Prize('$', "Prize", 5);
 		Prize prize2 = new Prize('$', "Prize", 19);
+		Archer archer = new Archer('A', "Archer", 0);
 		
 		// Set Drawables
 		gameboard[tree.getLocation()] = tree;
+		gameboard[treetree.getLocation()] = treetree;
+		gameboard[treetreetree.getLocation()] = treetreetree;
 		gameboard[prize1.getLocation()] = prize1;
 		gameboard[prize2.getLocation()] = prize2;
+		gameboard[archer.getLocation()] = archer;
 		
 		// Set Moveables
+		movingPieces.add(archer);
 		
 		// Set interactables
 		interactingPieces.add(prize1);
 		interactingPieces.add(prize2);
-		
+		interactingPieces.add(archer);
 				
 	}
 	
