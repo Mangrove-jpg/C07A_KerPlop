@@ -91,14 +91,19 @@ public class LevelSetup {
 		
 		
 		Tree tree = new Tree('T', "Tree", 2);
+		Prize prize1 = new Prize('$', "Prize", 5);
+		Prize prize2 = new Prize('$', "Prize", 19);
 		
 		// Set Drawables
 		gameboard[tree.getLocation()] = tree;
+		gameboard[prize1.getLocation()] = prize1;
+		gameboard[prize2.getLocation()] = prize2;
 		
 		// Set Moveables
 		
 		// Set interactables
-		
+		interactingPieces.add(prize1);
+		interactingPieces.add(prize2);
 		
 				
 	}
