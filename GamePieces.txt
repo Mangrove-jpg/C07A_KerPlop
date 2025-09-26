@@ -1,0 +1,45 @@
+Game Pieces:
+
+Tree - It is a non-interactive and stationary element on the game board. It extends 
+GamePiece and it is Drawable, which means that it can display itself on the board. It always 
+returns NONE when interaction is attempted, so they have no effect on the player.
+
+Bird - It is a moving but non-threatening creature that flies back and forth on the 
+game board. This extends GamePiece, it implements Moveable which allows it to move during 
+each game turn. Its movement uses an algorithm that moves it back and forth between the game 
+board boundaries while avoiding occupied spaces. It is also Drawable which can display it on 
+the game board. Interactions always returns as InteractionResult.NONE so it is harmless and 
+cannot effect the player.
+
+Dragon - It is a moving and dangerous creature that flies on the game board with random 
+movements. This piece extends GamePiece. It is Drawable, allowing it to be displayed on the board, 
+and it's also interactive returning InteractionResult.HIT when the player is at the same location 
+as the dragon. It implements Moveable to allow it to move each turn. Its movement uses a random 
+movement algorithm. The Random class is called to generate random numbers that teleports the dragon 
+to random places on the game board, while also making sure it only moves to empty spaces on the board.
+
+Lava - This is a stationary and deadly element that can instantly kill the player if 
+the player makes contact with it. It extends GamePiece, so it is Drawable, which allows it to 
+be displayed on the board. It is interactive and returns InteractionResult.KILL when the player
+is at the same location as the lava, which results in the player dying and the game ending. 
+Moveable is not implemented so lava is at a fixed location on the game board.
+
+Portal - It is a stationary level progression element that allows the player to advance to the 
+next level of the game. This piece extends GamePiece. So it is Drawable, which allows it to be displayed 
+on the board. It is interactive and returns InteractionResult.ADVANCE when the player is at the same 
+location as the portal. This does not implement Moveable which makes its location on the game board fixed.
+
+Prize - This represents a reward item that the player needs to collect, and it 
+provides points toward level completion and disappears after collected. This piece extends
+GamePiece, making it Drawable, allowing it to be displayed on the board. It is interactive,
+returning InteractionResult.GET_POINT when the player is at the same location as the prize, 
+and the prize will also be removed from the board to prevent multiple collections. Prize does
+not implement Moveable, which makes it stationary.
+
+Archer - This represents an enemy that can attack the player from a distance as it 
+moves across the game board. This extends GamePiece, so it is Drawable, allowing it to be 
+displayed. It is interactive, and returns InteractionResult.HIT when the player is 1 space 
+away from the archer, whether left or right. Archer also implements Moveable allowing it to 
+move on the gameboard. It moves up and down the board, similar to bird. It has the same movement 
+algorithm as bird, where it moves back and forth between the game board boundaries while 
+avoiding already occupied spaces.
