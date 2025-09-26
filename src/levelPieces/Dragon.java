@@ -1,3 +1,16 @@
+/*
+ * Class: Dragon - It is a moving and dangerous creature that flies on the game board with random 
+ * movements. This piece extends GamePiece. It is Drawable, allowing it to be displayed on the board, 
+ * and it's also interactive returning InteractionResult.HIT when the player is at the same location 
+ * as the dragon. It implements Moveable to allow it to move each turn. Its movement uses a random 
+ * movement algorithm. The Random class is called to generate random numbers that teleports the dragon 
+ * to random places on the game board, while also making sure it only moves to empty spaces on the board.
+ * Author(s): Stephen Carmon, Joyce Zhou
+ * Date: September 25, 2025
+ * Collaborators: None
+ * Sources:w3schools.com, geeksforgeeks.org
+ */
+
 package levelPieces;
 
 import gameEngine.Drawable;
@@ -8,6 +21,7 @@ import java.util.Random;
 
 public class Dragon extends GamePiece implements Moveable{
 	
+	// Random number generator to create unpredictable movement
 	private Random numGen;
 	
 	public Dragon(char symbol, String label, int location) {
@@ -37,7 +51,7 @@ public class Dragon extends GamePiece implements Moveable{
 		gameBoard[getLocation()] = this;
 
 	
-	//Delete The dragon From Gameboard
+	//Delete the dragon from Gameboard
 		// Where dragon came from
 		if (gameBoard[current_loc] == this) {
 			gameBoard[current_loc] = null;

@@ -1,3 +1,19 @@
+/*
+ * Class: LevelSetup - It manages level configuration and is responsible for creating and 
+ * organizing all game content for each level. It is the bridge between the GameEngine and 
+ * the individual game pieces as it constructs complete level layouts and categorizes pieces 
+ * into a game board array that determines what appears at each position, a list of moving 
+ * pieces that require position updates each turn, and a list of interactive pieces that can 
+ * affect the player with interactions. When the GameEngine requests for a specific level using 
+ * createLevel(), this class initializes all the necessary game pieces and places them on the 
+ * board, adds them to the correct behavior lists (drawable, moveable, interactable), and sets 
+ * the player's starting position for that level.
+ * Author(s): Stephen Carmon, Joyce Zhou
+ * Date: September 25, 2025
+ * Collaborators: None
+ * Sources:w3schools.com, geeksforgeeks.org
+ */
+
 package levelPieces;
 
 import java.util.ArrayList;
