@@ -41,11 +41,11 @@ public class Dragon extends GamePiece implements Moveable{
 	public void move (Drawable[] gameBoard, int playerLocation) {
 		int current_loc = getLocation();
 		numGen = new Random();
-		int randomNumber = numGen.nextInt(gameBoard.length - 1);
+		int randomNumber = numGen.nextInt(gameBoard.length);
 		
 		// While loop for if the randomNumber is already a location with a game piece
 		while (gameBoard[randomNumber] != null) {
-			randomNumber = numGen.nextInt(gameBoard.length - 1);
+			randomNumber = numGen.nextInt(gameBoard.length);
 		}
 		this.setLocation(randomNumber);
 		gameBoard[getLocation()] = this;

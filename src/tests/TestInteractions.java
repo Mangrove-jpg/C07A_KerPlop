@@ -1,3 +1,15 @@
+/*
+ * Class: TestInteractions - Tests to make sure that all interactable game pieces are interacting correctly. It includes
+ * testTree, testPrize, testPortal, testLava, testDragon, testArcher. testTree tests to make sure player doesn't interact
+ * with trees regardless of position. testPrize, testPortal, testLava, and testDragon all test when player position overlaps,
+ * returning InteractionResults as GET_POINT, ADVANCE, KILL, and HIT respectively. Archer is tested to see if the player is HIT
+ * when they are 1 space away from the Archer from either side.
+ * Author(s): Stephen Carmon, Joyce Zhou
+ * Date: September 28, 2025
+ * Collaborators: None
+ * Sources: stackoverflow
+ */
+
 package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +27,7 @@ import levelPieces.*;
 
 class TestInteractions {
 	
-	//@Test
+	@Test
 	// Test that Tree never interacts
 	void testTree() {
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
@@ -29,7 +41,7 @@ class TestInteractions {
 			assertEquals(InteractionResult.NONE, myTree.interact(gameBoard, i));
 	}
 	
-	//@Test
+	@Test
 	void testPrize() {
 		// Initialize Prize and Gameboard
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
@@ -49,7 +61,7 @@ class TestInteractions {
 			assertEquals(InteractionResult.NONE, myPrize.interact(gameBoard, i));
 	}
 	
-	//@Test
+	@Test
 	void testLava() {
 		// Initialize Lava and Gameboard
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
@@ -67,7 +79,7 @@ class TestInteractions {
 		
 	}
 	
-	//@Test
+	@Test
 	void testPortal() {
 		// Initialize Portal and Gameboard
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
@@ -84,7 +96,7 @@ class TestInteractions {
 			assertEquals(InteractionResult.NONE, myPortal.interact(gameBoard, i));
 	}
 	
-	//@Test
+	@Test
 	void testDragon() {
 		// Initialize Portal and Gameboard
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
@@ -101,7 +113,7 @@ class TestInteractions {
 			assertEquals(InteractionResult.NONE, myDragon.interact(gameBoard, i));
 	}
 	
-	//@Test
+	@Test
 	void testArcher() {
 		// Initialize Archer and Gameboard
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
