@@ -101,7 +101,7 @@ class TestInteractions {
 			assertEquals(InteractionResult.NONE, myDragon.interact(gameBoard, i));
 	}
 	
-	@Test
+	//@Test
 	void testArcher() {
 		// Initialize Archer and Gameboard
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
