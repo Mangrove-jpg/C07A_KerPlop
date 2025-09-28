@@ -19,14 +19,14 @@ class TestInteractions {
 	// Test that Tree never interacts
 	void testTree() {
 		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
-		Tree tree = new Tree('T', "Tree", 12);
-		gameBoard[12] = tree;
+		Tree myTree = new Tree('T', "Tree", 12);
+		gameBoard[12] = myTree;
 		
-		assertEquals(InteractionResult.NONE, tree.interact(gameBoard, 12));
+		assertEquals(InteractionResult.NONE, myTree.interact(gameBoard, 12));
 		
 		// Tree should never interact regardless of position
 		for (int i = 0; i < GameEngine.BOARD_SIZE; i++)
-			assertEquals(InteractionResult.NONE, tree.interact(gameBoard, i));
+			assertEquals(InteractionResult.NONE, myTree.interact(gameBoard, i));
 	}
 	
 	//@Test
@@ -56,7 +56,7 @@ class TestInteractions {
 		Lava myLava = new Lava('L', "Lava", 12);
 		gameBoard[12] = myLava;
 				
-		//Test Interact results in Kill when Player and Lava overlap
+		//Test Interact results in KILL when Player and Lava overlap
 		assertEquals(InteractionResult.KILL, myLava.interact(gameBoard, 12));
 				
 		// Lava should never interact when player and lava don't overlap
@@ -94,16 +94,30 @@ class TestInteractions {
 		//Test Interact results in HIT when Player and Dragon overlap
 		assertEquals(InteractionResult.HIT, myDragon.interact(gameBoard, 12));
 								
-		// Dargon should never interact when player and Dragon don't overlap
+		// Dragon should never interact when player and Dragon don't overlap
 		for (int i = 0; i < 12; i++)
 			assertEquals(InteractionResult.NONE, myDragon.interact(gameBoard, i));
 		for (int i = 13; i < GameEngine.BOARD_SIZE; i++)
 			assertEquals(InteractionResult.NONE, myDragon.interact(gameBoard, i));
 	}
 	
-	//@Test
+	@Test
 	void testArcher() {
-		fail("Not implemented");
+		// Initialize Archer and Gameboard
+		Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		Archer myArcher = new Archer('A', "Archer", 12);
+		gameBoard[12] = myArcher;
+								
+		//Test Interact results in HIT when Player is 1 space away from Archer
+		for (int i = 0; i < GameEngine.BOARD_SIZE; i++)
+			if (i == 11 || i == 13) {
+				assertEquals(InteractionResult.HIT, myArcher.interact(gameBoard, i));
+			}
+			// Should not hit if player is at any other position
+			else {
+				assertEquals(InteractionResult.NONE, myArcher.interact(gameBoard, i));
+			}
+								
 	}
 
 }
